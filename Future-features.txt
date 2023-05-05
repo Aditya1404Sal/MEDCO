@@ -1,0 +1,34 @@
+add a OTP verification handler and a otp verification component (js) file and make appropriate HTTP requests , here are the steps
+Install and configure the necessary packages: You will need to install and configure packages such as nodemailer and jsonwebtoken to send emails and generate OTPs respectively.
+
+Create an API endpoint to generate and send OTP: 
+Create an API endpoint to generate and send OTP to 
+the user's email or mobile number. You can use a library 
+like node-otp to generate OTPs. Once the OTP 
+is generated, you can send it to the user's email 
+or mobile number using nodemailer.
+
+Create an API endpoint to verify OTP: Create another 
+API endpoint to verify the OTP entered by the user
+. You will need to store the OTP and the user's email 
+or mobile number in a database (such as MongoDB) 
+to verify the OTP entered by the user. Once the OTP is
+ verified, you can send a JSON web token (JWT) to the user.
+
+Implement the OTP verification process in the client-side: 
+In the client-side, you can create a form 
+where the user enters the OTP sent to their email or mobile number.
+ Once the user enters the OTP, you 
+can send a request to the server to verify the OTP. If the OTP is verified, 
+the server will send a JWT 
+to the client, which can be stored in the client's local storage.
+
+Implement authentication using JWT: 
+Once the user is authenticated using OTP, you can use the JWT to 
+authenticate the user for subsequent requests.
+ You can include the JWT in the authorization header of
+ each request to the server.
+
+Overall, setting up OTP verification in a MERN stack application requires implementing several components,
+ such as generating and sending OTP, verifying OTP, and implementing the authentication process using JWT.
+  However, once set up, this can provide a secure and reliable way to authenticate users in your application.

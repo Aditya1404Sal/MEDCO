@@ -1,0 +1,13 @@
+.form-container {
+  background: linear-gradient(to bottom, #85f4fa, #856bfb);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  width: 500px;
+  margin: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

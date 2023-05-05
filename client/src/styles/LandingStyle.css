@@ -1,0 +1,246 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* Header styles */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding-top: 1rem;
+    height: 90px;
+    padding-right: 5px;
+  }
+  
+  header h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    padding-left: 12.5px;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header nav ul button {
+    margin: 0 0.5rem;
+  }
+  
+  header nav ul button {
+    color: #000000;
+    font-weight: bold;
+    transition: all 0.4s ease;
+  }
+  
+  header nav ul button :hover {
+    transform: scale(1.1);
+  }
+  
+  header button {
+    background-color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  header button:hover {
+    background-color: #000000;
+    color: #fff;
+  }
+  
+  /* Main content styles */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photoTestimonyBox{
+    height: 900px;
+    
+    border: 1px solid black;
+  }
+
+  .locationBox{
+    height: 650px;
+    background: #000;
+    border: 1px solid rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    grid-auto-rows: 650px;
+    grid-gap: 25px;
+
+  }
+
+  .locationBox div{
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    margin:25px;
+  }
+
+  .locationBox div:nth-child(2){
+    background-color: #373535;
+  }
+
+
+
+  .photoHospital{
+    padding:20px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: 250px;
+    grid-gap: 25px;
+  }
+
+  .photoHospital div{
+    background-color: #ffffff;
+    border-radius: 10px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.516) 0px 5px 15px;
+  }
+
+  .banner{
+  height:550px;
+  background-image: linear-gradient(
+  330deg,
+  hsl(177deg 90% 92%) 0%,
+  hsl(196deg 83% 82%) 11%,
+  hsl(212deg 79% 78%) 22%,
+  hsl(225deg 79% 81%) 33%,
+  hsl(238deg 86% 86%) 44%,
+  hsl(261deg 80% 87%) 56%,
+  hsl(291deg 57% 88%) 67%,
+  hsl(322deg 71% 91%) 78%,
+  hsl(344deg 85% 95%) 89%,
+  hsl(0deg 33% 98%) 100%
+);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+ }
+  .instructionPanel{
+    height: auto;
+  }
+
+  .headerBarSteps{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  }
+.lTB1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+  
+  .box{
+    color: #ffffff;
+    padding-top: 15px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+  }
+
+  body{
+    background-image: linear-gradient(
+  330deg,
+  hsl(177deg 90% 92%) 0%,
+  hsl(196deg 83% 82%) 11%,
+  hsl(212deg 79% 78%) 22%,
+  hsl(225deg 79% 81%) 33%,
+  hsl(238deg 86% 86%) 44%,
+  hsl(261deg 80% 87%) 56%,
+  hsl(291deg 57% 88%) 67%,
+  hsl(322deg 71% 91%) 78%,
+  hsl(344deg 85% 95%) 89%,
+  hsl(0deg 33% 98%) 100%
+);
+  }
+
+  .instructionPanel{
+    padding:20px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 250px;
+    grid-gap: 25px; 
+  }
+
+  .instructionPanel div{
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    box-shadow: rgba(0, 0, 0, 0.516) 0px 5px 15px;
+  }
+
+  .headerBarSteps{
+    padding-left: 40px;
+  }
+
+  .photoTestimonyBox{
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    grid-auto-rows: 830px;
+    grid-gap: 25px; 
+    padding: 35px;
+
+  }
+
+  .photoTestimonyBox div:nth-child(1){
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .photoTestimonyBox div:nth-child(2){
+    align-items:center;
+    justify-content:center;
+    display: flex;
+  }
+
+  .headerBarSteps b h2{
+    background-color: #ffffff46;
+    margin: auto;
+    padding: 35px;
+    border-radius: 25px;
+  }
+
+  .lTB1 h1{
+    background-color: #ffffff51;
+    margin: auto;
+    padding: 35px;
+    border-radius: 25px;
+  }
+  img {
+    max-width: 100%; /* Set the maximum width of the image to the width of its container */
+    max-height: 100%; /* Set the maximum height of the image to the height of its container */
+  }

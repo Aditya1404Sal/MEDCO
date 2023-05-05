@@ -1,0 +1,151 @@
+.main {
+    padding: 0px;
+  }
+  .layout {
+    display: flex;
+  }
+  
+  .sidebar {
+    min-height: 100%;
+    width: 150px;
+    border-radius: 5px;
+    background-image: linear-gradient(
+  10deg,
+  hsl(240deg 100% 20%) 0%,
+  hsl(252deg 99% 23%) 7%,
+  hsl(258deg 99% 26%) 14%,
+  hsl(263deg 100% 29%) 21%,
+  hsl(271deg 100% 30%) 29%,
+  hsl(282deg 100% 30%) 36%,
+  hsl(291deg 100% 30%) 43%,
+  hsl(299deg 94% 30%) 50%,
+  hsl(291deg 90% 28%) 57%,
+  hsl(281deg 89% 26%) 64%,
+  hsl(271deg 88% 23%) 71%,
+  hsl(273deg 90% 21%) 79%,
+  hsl(287deg 88% 21%) 86%,
+  hsl(299deg 79% 22%) 93%,
+  hsl(310deg 70% 27%) 100%
+);
+    box-shadow: 0 0 2px gray;
+    margin-right: 5px;
+    color: white;
+  }
+  
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+  .logo{
+    padding: 10px;
+    padding-right: 5px;
+    height: 94.5px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items:center;
+    justify-items: center;
+  }
+  .header {
+    padding: 10px;
+    height: 10vh;
+    margin-bottom: 0px;
+    box-shadow: 0 0 0px gray;
+    background-image: linear-gradient(
+  10deg,
+  hsl(240deg 100% 20%) 0%,
+  hsl(252deg 99% 23%) 7%,
+  hsl(258deg 99% 26%) 14%,
+  hsl(263deg 100% 29%) 21%,
+  hsl(271deg 100% 30%) 29%,
+  hsl(282deg 100% 30%) 36%,
+  hsl(291deg 100% 30%) 43%,
+  hsl(299deg 94% 30%) 50%,
+  hsl(291deg 90% 28%) 57%,
+  hsl(281deg 89% 26%) 64%,
+  hsl(271deg 88% 23%) 71%,
+  hsl(273deg 90% 21%) 79%,
+  hsl(287deg 88% 21%) 86%,
+  hsl(299deg 79% 22%) 93%,
+  hsl(310deg 70% 27%) 100%
+);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+  .body {
+    height: 100vh;
+    margin-bottom: 0px;
+    box-shadow: 0 0 0px gray;
+    background-color: white;
+  }
+  .logo h6 {
+    font-size: 2rem;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    margin: 5px;
+    justify-content: center;
+  }
+  .menu {
+    padding: 8px;
+    background-image: linear-gradient(
+  45deg,
+  hsl(162deg 78% 72%) 0%,
+  hsl(73deg 63% 71%) 20%,
+  hsl(7deg 100% 79%) 40%,
+  hsl(304deg 54% 67%) 60%,
+  hsl(263deg 62% 63%) 80%,
+  hsl(290deg 59% 47%) 100%
+);
+  }
+  .menu-item {
+    margin-bottom: 30px;
+  }
+  .menu-item a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .menu-item i {
+    font-size: 1.2rem;
+    margin: 0 15px;
+  }
+  .active {
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 1rem;
+  }
+ 
+  .active i {
+    color: rgb(255, 0, 0);
+  }
+  .header-item a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .header-item i {
+    font-size: 1.2rem;
+    margin: 0 15px;
+  }
+  .header-item {
+    color: rgb(255, 255, 255);
+  }
+  .header-name a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  .header-name{
+    color: white;
+  }
+  .header-name i{
+    font-size: 1.2rem;
+    margin: 0 15px;
+  }
+
+
+  
+  
