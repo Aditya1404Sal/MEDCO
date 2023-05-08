@@ -33,8 +33,8 @@ router.post('/getUserData',authMiddleware,authController);
 
 router.get('/getAllDoctors',authMiddleware,getAllDoctorCtrlUser);
 
-//POST all the appointments of a user on the appointments page
-router.post('/getUserAppointments',authMiddleware,getAllAppointmentsForUser);
+//GET all the appointments of a user on the appointments page
+router.get('/getUserAppointments',authMiddleware,getAllAppointmentsForUser);
 
 //check availability of appointment for the "check button"
 

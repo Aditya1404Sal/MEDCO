@@ -3,17 +3,19 @@ import Layout from '../components/Layout'
 import axios from 'axios'
 import { Table } from 'antd';
 import '../styles/AppointmentUser.css'
+const moment = require('moment')
+
 
 
 const PatientAppointments = () => {
   const [appointments,setAppointments] = useState([]);
+
   
 
 
   const getAppointments = async() => {
     try {
-      
-      const res = await axios.post('/api/v1/user/getUserAppointments',null,{
+      const res = await axios.get('/api/v1/user/getUserAppointments',{
         headers:{
             Authorization:`Bearer ${localStorage.getItem('token')}`
         }
@@ -32,16 +34,19 @@ const PatientAppointments = () => {
     
     const cols = [ //here change the data index to the appointment model schema naming convection 
     {
-      title:'Name',
-      dataIndex:'userInfo.name',
+      title:'Doctor',
+      dataIndex: ['doctorInfo', 'firstName'],
+    render: (text, record) => {<span>{record.doctorInfo.firstName}</span>},
     },
     {
-      title:'Date',
-      dataIndex:'appointmentDate'
+      title: 'Date',
+      dataIndex: 'appointmentDate',
+      render: (text, record) => <span>{moment(record.appointmentDate).format('DD/MM/YYYY')}</span>,
     },
     {
-      title:'Time',
-      dataIndex:'appointmentTime'
+      title: 'Time',
+      dataIndex: 'appointmentTime',
+      render: (text, record) => <span>{moment(record.appointmentTime).format('hh:mm')}</span>,
     },
     {
       title:'History',
@@ -57,7 +62,7 @@ const PatientAppointments = () => {
 return (
 <Layout>
     <div className='search-bar p-3'>
-        <h4></h4>
+        <h4>yoo</h4>
     </div>
     <h2 className='p-3'>List of all appointments</h2>
     <Table className=' table-with-data p-4' columns={cols} dataSource={appointments}/>

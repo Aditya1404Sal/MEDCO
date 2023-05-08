@@ -40,8 +40,8 @@ const BookingPage = () => {
       {
         doctorId:params.doctorId,
         userId:user._id,
-        appointmentDate:date,
-        appointmentTime:time,
+        appointmentDate:date.format('DD-MM-YYYY'),
+        appointmentTime:time.format("HH:mm"),
         doctorInfo:doctors,
         userInfo:user
       },{
@@ -113,8 +113,8 @@ const BookingPage = () => {
           <DatePicker
           className='m-3'
           format="DD-MM-YYYY"
-          onChange={(value) =>{
-            setDate(moment(value).format("DD-MM-YYYY")) 
+          onChange={(values) =>{
+            setDate(values) 
         }
         }
           />
@@ -122,7 +122,7 @@ const BookingPage = () => {
           className='m-3'
           format="HH:mm"
           onChange={(value) => {
-            setTime(moment(value).format('HH:mm'))}
+            setTime(value)}
           }
           />
         </div>

@@ -38,6 +38,11 @@ const doctorSchema = new mongoose.Schema({
         type:Number,
         required:[true,"consultation fee is required"]
     },
+    NumberOfpatient:{
+        type:Number,
+        required:[true,"number of patients required"],
+        default:0
+    },
     status:{
         type:String,
         default:'pending'

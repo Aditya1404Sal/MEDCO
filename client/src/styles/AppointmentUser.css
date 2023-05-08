@@ -7,4 +7,18 @@ Table{
     margin: auto;
     padding: auto;  
     font-size: large;
+    background-image: linear-gradient(
+  330deg,
+  hsl(177deg 90% 92%) 0%,
+  hsl(196deg 83% 82%) 11%,
+  hsl(212deg 79% 78%) 22%,
+  hsl(225deg 79% 81%) 33%,
+  hsl(238deg 86% 86%) 44%,
+  hsl(261deg 80% 87%) 56%,
+  hsl(291deg 57% 88%) 67%,
+  hsl(322deg 71% 91%) 78%,
+  hsl(344deg 85% 95%) 89%,
+  hsl(0deg 33% 98%) 100%
+);
 }
+

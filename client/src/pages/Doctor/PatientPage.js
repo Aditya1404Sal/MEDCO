@@ -39,14 +39,6 @@ const PatientPage = () => {
           dataIndex:'userInfo.name',
         },
         {
-          title:'Date',
-          dataIndex:'appointmentDate'
-        },
-        {
-          title:'Time',
-          dataIndex:'appointmentTime'
-        },
-        {
           title:'History',
           dataIndex:'actions',
           render: (text,record) => (
