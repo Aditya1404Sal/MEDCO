@@ -11,6 +11,7 @@ const PatientPage = () => {
     const params = useParams();
     const dispatch = useDispatch();
 
+  
     const getAllPatientData = async() => {
         try {
             const res = await axios.post('/api/v1/doctor/getAllPatientsData',{
@@ -27,6 +28,7 @@ const PatientPage = () => {
             console.log(error);
 
         }
+        
     }
 
     useEffect(() => {
@@ -36,22 +38,22 @@ const PatientPage = () => {
     const cols = [ //here change the data index to the appointment model schema naming convection 
         {
           title:'Name',
-          dataIndex:'userInfo.name',
+          dataIndex:'',
         },
         {
           title:'Phone',
-          dataIndex:'userInfo.mobile'
+          dataIndex:''
         },
         {
           title:'User Id',
-          dataIndex:'UserId'
+          dataIndex:'userId'
         },
         {
           title:'History',
           dataIndex:'actions',
           render: (text,record) => (
             <div className='d-flex'>
-              <button className='btn btn-success' onClick={showPatientHistory}>View</button>
+              <button className='btn btn-success'>View</button>
             </div>
           )
         }

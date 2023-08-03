@@ -107,13 +107,13 @@ const BookingPage = () => {
           <p>Appointment Type:</p>
           <form>
             <label>Normal Check-Up</label>
-            <input type='radio' onSelect={manageAPPtype1}/>
+            <input type='radio'/>
             <label>Premium Check-Up</label>
-            <input type='radio' onSelect={manageAPPtype2}/>
+            <input type='radio'/>
             <label>Consultation</label>
-            <input type='radio' onSelect={manageCONtype1}/>
+            <input type='radio'/>
             <label>Special Consultation</label>
-            <input type='radio' onSelect={manageCONtype2}/>
+            <input type='radio'/>
           </form>
         </div>
         </div>

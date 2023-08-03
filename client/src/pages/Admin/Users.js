@@ -26,7 +26,7 @@ const Users = () => {
 
   const blockUserhandler = async() => {
     try {
-      
+      console.log("first");
     } catch (error) {
       console.log(error)
     }

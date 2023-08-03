@@ -38,6 +38,44 @@ const getDoctorByIdCtrl = async(req,res) => {
     }
 }
 
+const updatePatientCtrl = async(req,res) => {
+    try {
+    const doctor = await doctorModel.findOneAndUpdate({userId:req.body.userId},req.body.NumberOfpatient);
+    res.status(200).send({
+        success:true,
+        message:'number of patients changed',
+        data:doctor.NumberOfpatient,
+    });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            message:'something went wrong in update patient no ctrl',
+            success:false,
+            error
+        })
+    }
+}
+
+const deleteAllPatientCtrl = async(req,res) => {
+    try {
+        const doctor = await doctorModel.findOne({userId:req.body.userId});
+        doctor.NumberOfpatient = 0;
+        const updatedDoctor = await doctor.save();
+        res.status(200).send({
+            message:'number of patients reset to zero',
+            success:true,
+            data:updatedDoctor,
+        });
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            message:'something went wrong in 65:doctorctrl.js',
+            error,
+            success:false
+        })
+    }
+}
+
 const updateDocInfoCtrl = async(req,res) => {
     try {
         const doctor = await doctorModel.findOneAndUpdate({userId:req.body.userId},req.body);
@@ -56,4 +94,4 @@ const updateDocInfoCtrl = async(req,res) => {
     }
 }
 
-module.exports = {getInfoDoctorCtrl , updateDocInfoCtrl,getDoctorByIdCtrl};
+module.exports = {getInfoDoctorCtrl , updateDocInfoCtrl,getDoctorByIdCtrl,updatePatientCtrl,deleteAllPatientCtrl};

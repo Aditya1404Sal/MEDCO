@@ -1,7 +1,7 @@
 const express = require('express');
 const { LoginController, RegisterController, authController ,applyDocController,getAllNotificationCtrl,deleteAllNotificationCtrl, getAllDoctorCtrlUser, bookAppointmentCtrl} = require('../controllers/userCtrl');
 const authMiddleware = require('../middlewares/authMiddleware');
-const { getAllAppointmentsForUser, checkAppointmentAvailability } = require('../controllers/appointmentCtrl');
+const { getAllAppointmentsForUser, checkAppointmentAvailability, getUserDataForPatients } = require('../controllers/appointmentCtrl');
 
 //router
 
@@ -19,6 +19,7 @@ router.post('/Register' , RegisterController);
 router.post('/get-all-notification',authMiddleware,getAllNotificationCtrl)
 
 router.post('/delete-all-notification',authMiddleware,deleteAllNotificationCtrl)
+
 // Send Booking data to database as pending controller
 router.post('/book-appointment',authMiddleware,bookAppointmentCtrl)
 

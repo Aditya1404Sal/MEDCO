@@ -1,6 +1,7 @@
 const appointmentModel = require('../models/appointmentModel');
 const doctorModel = require('../models/doctorModel')
-const moment = require('moment')
+const moment = require('moment');
+const { userModel } = require('../models/userModel');
 
 const getAllPatientDataCtrl = async(req,res) => {
     try {
@@ -11,7 +12,7 @@ const getAllPatientDataCtrl = async(req,res) => {
         res.status(200).send({
             success:true,
             message:'Got all appointments of users',
-            data : patients, 
+            data:patients
         });
     } catch (error) {
         console.log(error);
@@ -76,4 +77,4 @@ try {
 }
 }
 
-module.exports = {getAllPatientDataCtrl,getAllAppointmentsForUser,checkAppointmentAvailability}; 
+module.exports = {getAllPatientDataCtrl,getAllAppointmentsForUser,checkAppointmentAvailability,}; 

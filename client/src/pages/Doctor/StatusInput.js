@@ -5,7 +5,7 @@ const StatusInput = () => {
 
   const docInHandler = async() => {
     try {
-      
+      console.log("first")
     } catch (error) {
       console.log(error)
     }
@@ -13,7 +13,7 @@ const StatusInput = () => {
 
   const docOutHandler = async() => {
     try {
-      
+      console.log("first")
     } catch (error) {
       console.log(error)
     }
