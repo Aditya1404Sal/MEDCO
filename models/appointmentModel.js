@@ -9,11 +9,11 @@ const appointmentSchema = new mongoose.Schema({
         required:true
     },
     doctorInfo:{
-        type:String,
+        type:Object,
         required:true,
     },
     userInfo:{
-        type:String,
+        type:Object,
         required:true,
     },
     appointmentDate:{

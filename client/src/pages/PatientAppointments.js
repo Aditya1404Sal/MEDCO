@@ -11,7 +11,13 @@ const PatientAppointments = () => {
   const [appointments,setAppointments] = useState([]);
 
   
-
+  const handlePayment = async() => { //in progress
+    try {
+      
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const getAppointments = async() => {
     try {
@@ -49,11 +55,11 @@ const PatientAppointments = () => {
       render: (text, record) => <span>{moment(record.appointmentTime).format('hh:mm')}</span>,
     },
     {
-      title:'History',
+      title:'PaymentStatus',
       dataIndex:'actions',
       render: (text,record) => (
         <div className='d-flex'>
-          <button className='btn btn-success'>Pay-now</button>
+          <button className='btn btn-success' onClick={handlePayment}>Pay-now</button>
         </div>
       )
     }
@@ -61,10 +67,7 @@ const PatientAppointments = () => {
 
 return (
 <Layout>
-    <div className='search-bar p-3'>
-        <h4>yoo</h4>
-    </div>
-    <h2 className='p-3'>List of all appointments</h2>
+    <h1 className='p-3'>List of all appointments</h1>
     <Table className=' table-with-data p-4' columns={cols} dataSource={appointments}/>
 </Layout>
 )

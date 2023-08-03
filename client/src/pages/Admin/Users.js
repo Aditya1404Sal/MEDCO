@@ -22,6 +22,16 @@ const Users = () => {
       console.log(error)
     }
   }
+
+
+  const blockUserhandler = async() => {
+    try {
+      
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 useEffect(() => {
   getUsers();
 },[]);
@@ -44,7 +54,7 @@ const cols = [
     dataIndex:'actions',
     render: (text,record) => (
       <div className='d-flex'>
-        <button className='btn btn-danger'>Block</button>
+        <button className='btn btn-danger' onClick={blockUserhandler}>Block</button> //make appropriate changes by lookking at Doctors.js code
       </div>
     )
   }

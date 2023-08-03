@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import { useParams  } from 'react-router-dom';
 import axios from 'axios'
 import {useEffect,useState} from 'react'
-import { DatePicker, TimePicker, message } from 'antd';
+import { DatePicker, Form, TimePicker, message } from 'antd';
 import {useDispatch, useSelector} from 'react-redux'
 import moment from 'moment'
 import {showLoading,hideLoading} from '../redux/features/alertSlice' 
@@ -96,35 +96,49 @@ const BookingPage = () => {
                 <h3>Dr.{doctors.firstName} {doctors.lastName}</h3>
             )}
         </div>
-        
+        <div className='docdetails p-3 df'>
         <div className='mapSection m-3 p-2'>
-          <h4>you can find us here : a) chirayu / b) personal hospital</h4>
+          <p>personal hospital address:</p>
         </div>
         <div className='testimonySection m-3 p-2'>
-          <h4>Here are the revies written by our valuable patients</h4>
+          <p>review:/rating</p>
         </div>
         <div className='pricingSection m-3 p-2'>
-          <h4>Price for new patient : / Price for old patient : </h4>
+          <p>Appointment Type:</p>
+          <form>
+            <label>Normal Check-Up</label>
+            <input type='radio' onSelect={manageAPPtype1}/>
+            <label>Premium Check-Up</label>
+            <input type='radio' onSelect={manageAPPtype2}/>
+            <label>Consultation</label>
+            <input type='radio' onSelect={manageCONtype1}/>
+            <label>Special Consultation</label>
+            <input type='radio' onSelect={manageCONtype2}/>
+          </form>
         </div>
-        <div className='instructionSection m-3 p-2'>
-          <h4>Need some help ? - follow these instructions</h4>
         </div>
+        <div className='HistoryFillingForm'>
+          <Form>
+
+
+          </Form>
         <div className='Form d-flex flex-column w-55 m-3'>
           <DatePicker
           className='m-3'
           format="DD-MM-YYYY"
-          onChange={(values) =>{
-            setDate(values) 
+          onChange={(inputdate) =>{
+            setDate(inputdate) 
         }
         }
           />
           <TimePicker
           className='m-3'
           format="HH:mm"
-          onChange={(value) => {
-            setTime(value)}
+          onChange={(inputtime) => {
+            setTime(inputtime)}
           }
           />
+        </div>
         </div>
         <button className='btn btn-primary m-3 mt-2' onClick={handleAvailability}>
             Check Availability

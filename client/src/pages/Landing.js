@@ -43,20 +43,21 @@ const Landing = () => {
             </div>
         </div>
         <div className='photoTestimonyBox'>
-           <div>testimonies from previous patients</div>
+           <div className='testimony'>
+            
+           </div>
            <div>
-           <img src='generic_doctor.jpg' alt='Doctor photo'/>
+           <h1>photo goes here</h1>
            </div>
         </div>
         <div className='locationTextBox'>
             <div className='lTB1'>
             <h1>Wondering where we are ?</h1>
             </div>
-
             <div className='locationBox'>
             <div>Location from Google maps</div>
             <div>
-               Description and landmarks + contact info
+               
             </div>
             </div>
         </div>
@@ -80,13 +81,13 @@ const Landing = () => {
                 <p><b>Step 1 :</b>Register if you haven't ! or just Login with your current account</p>
             </div>
             <div>
-                <p><b>Step 2 :</b>On the homepage you will have a wide range of options of doctors available at the moment</p>
-                <p>then select a doctor you like based on their profiles </p>
+                <p><b>Step 2 :</b>On the homepage you will have a wide range of options of doctors available</p>
+                <p>select a doctor you like based on their profiles </p>
             </div>
             <div>
                 <p><b>Step 3 :</b>Enter the date you wold like to book an appointment for and check if it's available</p> 
-                <p>based on the availability conditions either proceed with the bookings and choose an appointment type</p>
-                <p>and enter your details then click on book</p>
+                <p>based on the availability conditions either proceed with the bookings or choose another , then choose an appointment type</p>
+                <p>and finally enter your details and click on book</p>
             </div>
             
         </div>

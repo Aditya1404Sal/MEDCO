@@ -39,11 +39,19 @@ const PatientPage = () => {
           dataIndex:'userInfo.name',
         },
         {
+          title:'Phone',
+          dataIndex:'userInfo.mobile'
+        },
+        {
+          title:'User Id',
+          dataIndex:'UserId'
+        },
+        {
           title:'History',
           dataIndex:'actions',
           render: (text,record) => (
             <div className='d-flex'>
-              <button className='btn btn-success'>View</button>
+              <button className='btn btn-success' onClick={showPatientHistory}>View</button>
             </div>
           )
         }
