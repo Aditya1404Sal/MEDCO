@@ -63,7 +63,7 @@ export const HeaderMenuAdmin = [
 export const HeaderMenuDoctor = [
     {
         name: 'appointment schedule',
-        path: '/doctor/PatientLogs/:doctorId',
+        path: '/doctor/PatientLogs',
         icon: 'fa-solid fa-calendar-days'
     },
 

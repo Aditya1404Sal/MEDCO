@@ -26,6 +26,11 @@ const doctorSchema = new mongoose.Schema({
         type:String,
         required:[true,"address is required"]
     },
+    appointments:{
+        type:Array,
+        required:false,
+        default:0
+    },
     specialization:{
         type:String,
         required:[true,"specialization is required"]

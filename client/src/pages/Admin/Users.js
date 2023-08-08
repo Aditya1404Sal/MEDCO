@@ -54,7 +54,7 @@ const cols = [
     dataIndex:'actions',
     render: (text,record) => (
       <div className='d-flex'>
-        <button className='btn btn-danger' onClick={blockUserhandler}>Block</button> //make appropriate changes by lookking at Doctors.js code
+        <button className='btn btn-danger' onClick={blockUserhandler}>Block</button>
       </div>
     )
   }

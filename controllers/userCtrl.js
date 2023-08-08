@@ -1,4 +1,4 @@
-const {userModel} = require('../models/userModel');
+const userModel = require('../models/userModel');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const doctorModel = require('../models/doctorModel');
@@ -171,35 +171,8 @@ const getAllDoctorCtrlUser = async(req,res) => {
     }
 }
 
-const bookAppointmentCtrl = async(req,res) => {
-    try {
-        req.body.appointmentDate = moment(req.body.appointmentDate,'DD-MM-YYYY').toISOString();
-        req.body.appointmentTime = moment(req.body.appointmentTime,'HH:mm').toISOString();
-        req.body.status = "pending"
-        const newAppointment = new appointmentModel(req.body)
-        await newAppointment.save();
-        const user = await userModel.findOne({_id:req.body.doctorInfo.userId})
-        user.notification.push({
-            message:`new appointment reserved by ${req.body.userInfo.name} for ${req.body.appointmentDate} time: ${req.body.appointmentTime}`,
-            type:'new-appointment-request',
-            onClickPath:'/user/appointments'
-        })
-        await user.save();
-        res.status(200).send({
-            message:'Appointment Booked successfully',
-            success:true
-        })
-        
-    } catch (error) {
-        console.log(error);
-        res.status(500).send({
-            message:'error in book appointment ctrl pipeline',
-            success:false,
-            error,
-        })
-    }
-}
 
 
 
-module.exports = {LoginController,bookAppointmentCtrl,RegisterController,authController,applyDocController,getAllNotificationCtrl,getAllDoctorCtrlUser,deleteAllNotificationCtrl};
+
+module.exports = {LoginController,RegisterController,authController,applyDocController,getAllNotificationCtrl,getAllDoctorCtrlUser,deleteAllNotificationCtrl};

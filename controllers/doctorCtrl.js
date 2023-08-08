@@ -1,4 +1,5 @@
 const doctorModel = require("../models/doctorModel");
+const appointmentModel = require("../models/appointmentModel");
 
 const getInfoDoctorCtrl = async(req,res) => {
     try {
@@ -16,24 +17,6 @@ const getInfoDoctorCtrl = async(req,res) => {
             message:'error in getting doctor information',
             success:false,
             error,
-        })
-    }
-}
-
-const getDoctorByIdCtrl = async(req,res) => {
-    try {
-        const doctor = await doctorModel.findOne({_id:req.body.doctorId});
-        res.status(200).send({
-            message:'successfully sent doctor details to booking page',
-            success:true,
-            data:doctor,
-        });
-    } catch (error) {
-        console.log(error);
-        res.status(500).send({
-            message:'something went wrong in get single doc ctrl by id',
-            success:false,
-            error
         })
     }
 }
@@ -94,4 +77,25 @@ const updateDocInfoCtrl = async(req,res) => {
     }
 }
 
-module.exports = {getInfoDoctorCtrl , updateDocInfoCtrl,getDoctorByIdCtrl,updatePatientCtrl,deleteAllPatientCtrl};
+const getAllPatientDataCtrl = async(req,res) => {
+    try {
+        const doctor = await doctorModel.findOne({userId:req.body.userId});//change to approved once payment gate-way integration hits singularity
+        const patients = await appointmentModel.find({
+            doctorId:doctor._id
+        })
+        res.status(200).send({
+            success:true,
+            message:'Got all appointments of users',
+            data:patients
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+            message:'error in appointment ctrl ',
+            success:false,
+            error,     
+        });
+    }
+}
+
+module.exports = {getAllPatientDataCtrl, getInfoDoctorCtrl , updateDocInfoCtrl,updatePatientCtrl,deleteAllPatientCtrl};

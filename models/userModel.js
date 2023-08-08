@@ -37,4 +37,4 @@ const userSchema = new mongoose.Schema({
 //the schema for the data to be sent to MongoDB
 const userModel = mongoose.model('user',userSchema);
 
-module.exports = {userModel};
+module.exports = userModel;

@@ -15,7 +15,7 @@ const PatientPage = () => {
     const getAllPatientData = async() => {
         try {
             const res = await axios.post('/api/v1/doctor/getAllPatientsData',{
-                userId: params.doctorId
+                userId: params.id
             },{
                 headers:{
                     Authorization:`Bearer ${localStorage.getItem('token')}`
@@ -23,6 +23,7 @@ const PatientPage = () => {
             })
             if(res.data.success){
                 setPatients(res.data.data);
+                
               }
         } catch (error) {
             console.log(error);

@@ -1,7 +1,6 @@
 const express = require('express');
 const authMiddleware = require('../middlewares/authMiddleware');
-const { getInfoDoctorCtrl, updateDocInfoCtrl, getDoctorByIdCtrl, updatePatientCtrl, deleteAllPatientCtrl } = require('../controllers/doctorCtrl');
-const { getAllPatientDataCtrl } = require('../controllers/appointmentCtrl');
+const { getAllPatientDataCtrl ,getInfoDoctorCtrl, updateDocInfoCtrl, getDoctorByIdCtrl, updatePatientCtrl, deleteAllPatientCtrl } = require('../controllers/doctorCtrl');
 const router = express.Router();
 
 //POST this will fetch single Doctor Details
@@ -11,7 +10,7 @@ router.post('/getInfoDoctor',authMiddleware,getInfoDoctorCtrl);
 router.post('/updateDocInfo',authMiddleware,updateDocInfoCtrl);
 
 //POST method specifically for gatting doctor details based on params-id
-router.post('/getDoctorById',authMiddleware,getDoctorByIdCtrl);
+
 
 //managing number of patients in thee clinics 
 

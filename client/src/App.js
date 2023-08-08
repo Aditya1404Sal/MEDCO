@@ -61,7 +61,7 @@ function App() {
       </ProtectedRoute>
       
       } />
-     < Route path='/doctor/Booking-Details/:doctorId' 
+     < Route path='/doctor/Booking-Details/:id' 
       element={
 
       <ProtectedRoute>
@@ -69,7 +69,7 @@ function App() {
       </ProtectedRoute>
       
       } />
-      < Route path='/doctor/PatientLogs/:doctorId' 
+      < Route path='/doctor/PatientLogs/:id' 
       element={
 
       <ProtectedRoute>

@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
+// const doctorModel = require('./doctorModel'); //try it out with either the schema or model
+// const  userModel = require('./userModel');
 const appointmentSchema = new mongoose.Schema({
     userId:{
         type:String,
         required:true
     },
     doctorId:{
+        type:String,
+        required:true
+    },
+    appointmentId:{
         type:String,
         required:true
     },

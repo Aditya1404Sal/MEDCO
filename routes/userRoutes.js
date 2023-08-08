@@ -1,7 +1,7 @@
 const express = require('express');
-const { LoginController, RegisterController, authController ,applyDocController,getAllNotificationCtrl,deleteAllNotificationCtrl, getAllDoctorCtrlUser, bookAppointmentCtrl} = require('../controllers/userCtrl');
+const { LoginController, RegisterController, authController ,applyDocController,getAllNotificationCtrl,deleteAllNotificationCtrl, getAllDoctorCtrlUser} = require('../controllers/userCtrl');
 const authMiddleware = require('../middlewares/authMiddleware');
-const { getAllAppointmentsForUser, checkAppointmentAvailability, getUserDataForPatients } = require('../controllers/appointmentCtrl');
+const { getAllAppointmentsForUser, checkAppointmentAvailability, bookAppointmentCtrl,getUserDataForPatients } = require('../controllers/appointmentCtrl');
 
 //router
 

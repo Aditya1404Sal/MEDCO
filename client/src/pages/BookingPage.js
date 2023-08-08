@@ -9,23 +9,24 @@ import moment from 'moment'
 import {showLoading,hideLoading} from '../redux/features/alertSlice' 
 
 const BookingPage = () => {
-    const [doctors,setDoctors] = useState([]);
+    const [doctor,setDoctor] = useState([]);
     const params = useParams();
     const {user} = useSelector(state => state.user)
     const [date,setDate] = useState([]);
     const [time,setTime] = useState();
+    const [time2,setTime2] = useState();
     const [isAvailable,setisAvailable] = useState();
     const dispatch = useDispatch();
 
   const getDoctorData = async() => {
     try {
-      const res = await axios.post('/api/v1/doctor/getDoctorById',{ doctorId: params.doctorId },{
+      const res = await axios.post('/api/v1/doctor/getInfoDoctor',{ userId: params.id },{
         headers:{
           Authorization: "Bearer " + localStorage.getItem("token")
         }
       })
       if(res.data.success){
-        setDoctors(res.data.data);
+        setDoctor(res.data.data);
       }
     } catch (error) {
       console.log(error)
@@ -38,12 +39,12 @@ const BookingPage = () => {
       dispatch(showLoading());
       const res = await axios.post('/api/v1/user/book-appointment',
       {
-        doctorId:params.doctorId,
+        doctorId:params.id,
         userId:user._id,
         appointmentDate:date.format('DD-MM-YYYY'),
         appointmentTime:time.format("HH:mm"),
-        doctorInfo:doctors,
-        userInfo:user
+        doctorInfo:doctor,
+        userInfo:user,
       },{
         headers:{
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -92,8 +93,8 @@ const BookingPage = () => {
     <Layout>
         <h1 className='m-2 p-3'>BookingPage</h1>
         <div className='container'>
-            {doctors && (
-                <h3>Dr.{doctors.firstName} {doctors.lastName}</h3>
+            {doctor && (
+                <h3>Dr.{doctor.firstName} {doctor.lastName}</h3>
             )}
         </div>
         <div className='docdetails p-3 df'>
@@ -133,9 +134,18 @@ const BookingPage = () => {
           />
           <TimePicker
           className='m-3'
+          placeholder='From time'
           format="HH:mm"
-          onChange={(inputtime) => {
-            setTime(inputtime)}
+          onChange={(fromTime) => {
+            setTime(fromTime)}
+          }
+          />
+          <TimePicker
+          className='m-3'
+          placeholder='To Time'
+          format="HH:mm"
+          onChange={(toTime) => {
+            setTime2(toTime)}
           }
           />
         </div>
