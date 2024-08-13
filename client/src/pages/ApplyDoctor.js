@@ -63,11 +63,7 @@ const ApplyDoctor = () => {
           </Form.Item>
           </Col>
           <Col xs={24} md={24} lg={8}>
-          <Form.Item 
-          label="Phone" 
-          name="phone" 
-          required 
-          rules={[{required:true}]}>
+          <Form.Item label="Phone" name="phone" required rules={[{required:true}]}>
             <Input type='number' placeholder='your phone number'/>
           </Form.Item>
           </Col>

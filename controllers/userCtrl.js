@@ -77,7 +77,7 @@ const RegisterController = async (req,res) => {
 const applyDocController = async(req,res) =>{
     try {
         const newDoctor = await doctorModel({...req.body,status:'pending'})
-        await newDoctor.save()
+        await newDoctor.save();
         const adminUser = await userModel.findOne({isAdmin:true})
         const notification = adminUser.notification
         notification.push({
